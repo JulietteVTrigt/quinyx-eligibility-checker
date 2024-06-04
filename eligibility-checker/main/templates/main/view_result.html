@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'main/base.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    {% block content %}
+
+	<h1>Output</h1>
+
+	<!--SHOW WHEN THERE OCCURS AN ERROR -->
+		{% if reasons == missing_fields %}
+			<h1>Error</h1>
+			<p>{{error}}</p>
+		{% endif %}
+
+		<!--SHOW WHEN REASONS ARE CALCULATED -->
+		<ul class="list-group">
+		{% for reason in reasons %}
+			<li><p>{{reason}}</p></li>
+		{% endfor %}
+		</ul>
+
+
+{% endblock %}
+
+</head>
+<body>
+</body>
+</html>

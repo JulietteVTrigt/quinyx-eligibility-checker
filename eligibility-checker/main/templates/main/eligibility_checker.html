@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Home page
+{% endblock %}
+
+{% block content %}
+
+
+<div>
+    <h1>Eligibility Checker</h1>
+    <p>
+    This tool will check if a user is eligible to work a shift.
+    Note that this tool does not consider the rule logic. So if a shift is not assigned to a user because of a rule, this tool will not be able to tell you why.
+    There are numerous reasons why a shift may not be assigned to a user:
+    <br>
+    <br>
+
+        1. Eligible Agreement<br>
+        2. Active Department<br>
+        3. Shifts within Availability<br>
+        4. Shift outside Unavailability<br>
+        5. Eligible by contract coverage<br>
+        6. Eligible by shift department<br>
+        7. Eligible by shift skills<br>
+        8. Eligible by shift licences<br><br>
+
+    You can check <a href="https://quinyx.atlassian.net/wiki/spaces/RD/pages/3809017857/Algorithm+Logic+Explanation+AA#Employee-Shift-Eligibility">this Confluence page</a> for more info!
+</p>
+
+<form method="post" action="{% url 'eligibility_check' %}">
+    {% csrf_token %}
+    <label for="shift_id">Shift id:</label>
+    <input type="text" id="shift_id" name="shift_id"><br>
+
+    <label for="user_id">User id:</label>
+    <input type="text" id="user_id" name="user_id"><br>
+
+    <label for="run_id">Run id:</label>
+    <input type="text" id="run_id" name="run_id"><br>
+
+    <label for="client_id">ALFA client id:</label>
+    <input type="text" id="client_id" name="client_id"><br>
+
+    <label for="client_secret">ALFA client secret:</label>
+    <input type="text" id="client_secret" name="client_secret"><br>
+
+<!--    <label for="payload">Payload:</label>-->
+<!--    <textarea id="payload" name="payload"></textarea><br>-->
+
+    <br>
+
+    <input type="submit" value="Submit" class="button">
+
+</form>
+</div>
+
+
+
+
+{% endblock %}

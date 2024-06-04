@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Shift Assignment Checker
+{% endblock %}
+
+{% block sidebar %}
+    <!-- insert default navigation text for every page -->
+    <h1>Shift Assignment Checker</h1>
+    <p>
+        This tool will  help you to check why a shift is not assigned to a certain employee. <br>
+        There are two tools available:
+        <ul>
+          <li>Eligibility checker: ... </li>
+          <li>Rule checker: ...</li>
+        </ul>
+    </p>
+
+
+    <a href="{% url 'eligibility_check_page' %}" class="button">Eligibility Checker</a>
+    <a href="{% url 'violation_comparator_page' %}" class="button">Violation Comparator</a>
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

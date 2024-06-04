@@ -1,0 +1,67 @@
+<html>
+
+<body style="background-color:#baddda;">
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+
+        body {
+            font-family: 'Poppins';font-size: 16px;
+            margin-left: 40px;
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #3591a0; /* Quinyx Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .button-home {
+            background-color: #d0858b; /* Quinyx Roze */
+            border: none;
+            color: white;
+            padding: 25px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 4px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+    </style>
+
+
+</head>
+
+<head>
+    <title> {% block title %} Default Title {% endblock %} </title>
+</head>
+
+{% block sidebar %}
+<a href="{% url 'home' %}" class="button-home">Home</a>
+{% endblock %}
+{% block content %}
+<body>
+<div id="content" name="content">
+    content on base page
+</div>
+{% endblock %}
+
+
+</body>
+
+</html>

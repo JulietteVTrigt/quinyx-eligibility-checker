@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Home page
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div>
+    <h1>Violation Comparator</h1>
+    <p>
+    This tool will check why shift x is not assigned to user y based on the rule logic.
+    <br>
+    </p>
+
+<form method="post" action="{% url 'violation_comparator' %}">
+    {% csrf_token %}
+    <label for="shift_id">Shift id:</label>
+    <input type="text" id="shift_id" name="shift_id"><br>
+
+    <label for="user_id">User id:</label>
+    <input type="text" id="user_id" name="user_id"><br>
+
+    <label for="run_id">Run id:</label>
+    <input type="text" id="run_id" name="run_id"><br>
+
+    <label for="client_id">ALFA client id:</label>
+    <input type="text" id="client_id" name="client_id"><br>
+
+    <label for="client_secret">ALFA client secret:</label>
+    <input type="text" id="client_secret" name="client_secret"><br>
+
+    <br>
+
+    <input type="submit" value="Submit" class="button">
+
+</form>
+</div>
+
+{% endblock %}

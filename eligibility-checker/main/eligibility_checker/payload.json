@@ -1,0 +1,203 @@
+{
+  "rules": [
+    {
+      "rule_id": "1",
+      "rule_tag": "shift_assignment",
+      "penalty": 100
+    },
+    {
+      "rule_id": "2",
+      "rule_tag": "max_contract_hours",
+      "penalty": 10
+    },
+    {
+      "rule_id": "3",
+      "rule_tag": "max_consecutive_working_days",
+      "penalty": 1000
+    },
+    {
+      "rule_id": "5",
+      "rule_tag": "min_rest_time_between_shifts",
+      "penalty": 1000
+    },
+    {
+      "rule_id": "6",
+      "rule_tag": "min_rest_time_period3",
+      "penalty": 1000,
+      "improvement_heuristic_only": true
+    },
+    {
+      "rule_id": "10",
+      "rule_tag": "max_shift_length",
+      "penalty": 1000
+    },
+    {
+      "rule_id": "11",
+      "rule_tag": "min_shift_length",
+      "penalty": 1000
+    },
+    {
+      "rule_id": "13",
+      "rule_tag": "max_minutes_per_period",
+      "penalty": 1000,
+      "improvement_heuristic_only": true
+    },
+    {
+      "rule_id": "14",
+      "rule_tag": "min_contract_hours",
+      "penalty": 1
+    },
+    {
+      "rule_id": "25",
+      "rule_tag": "max_working_time",
+      "penalty": 10
+    },
+    {
+      "rule_id": "30",
+      "rule_tag": "max_working_days_shifting",
+      "penalty": 500
+    },
+    {
+      "rule_id": "51",
+      "rule_tag": "min_consecutive_minutes_rest_per_day",
+      "penalty": 1000,
+      "improvement_heuristic_only": true
+    },
+    {
+      "rule_id": "70",
+      "rule_tag": "min_working_time",
+      "penalty": 1,
+      "improvement_heuristic_only": true
+    },
+    {
+      "rule_id": "71",
+      "rule_tag": "minimum_rest_days_after_max_worked_days",
+      "penalty": 1000,
+      "improvement_heuristic_only": true
+    },
+    {
+      "rule_id": "77",
+      "rule_tag": "maximum_balance_period_hours",
+      "penalty": 10
+    },
+    {
+      "rule_id": "21",
+      "rule_tag": "min_contract_hours_stepwise",
+      "penalty": 10
+    },
+    {
+      "rule_id": "15",
+      "rule_tag": "max_shifts_per_day",
+      "penalty": 5000,
+      "parameter_1": 1
+    },
+    {
+      "rule_id": "20",
+      "rule_tag": "working_time_preference",
+      "penalty": 8
+    }
+  ],
+  "settings": {
+    "start": 1710388800,
+    "finish": 1711079999,
+    "time_zone": "America/New_York",
+    "cost_objective": 0,
+    "rule_objective": 1,
+    "fairness_objective": 1,
+    "runtime": 240,
+    "auto_detect_strategy": true
+  },
+  "shifts": [
+    {
+      "id": 8563973,
+      "start": 1710410400,
+      "finish": 1710448200,
+      "is_fixed": false,
+      "user_id": 81347,
+      "pay_duration": 600,
+      "department_id": 6829,
+      "breaks": [
+        {
+          "start": 1710433800,
+          "finish": 1710435600
+        }
+      ],
+      "subshifts": [],
+      "raw": {},
+      "skills": [
+        {
+          "id": 1010,
+          "name": "Receiving"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 81347,
+      "start_contract": 1704085200,
+      "hourly_rate": 0,
+      "use_availabilities": false,
+      "date_of_birth": 1704258000,
+      "department_ids": [
+        {
+          "id": 6825,
+          "proficiency_rating": 0,
+          "from": 1661313600
+        }
+      ],
+      "availabilities": [],
+      "unavailabilities": [],
+      "preferences": [],
+      "agreements": [
+        {
+          "id": 1,
+          "start": 1704085200,
+          "check_for_break_rules": true,
+          "check_min_daily_rest_from_shift_start": false,
+          "check_min_rest_from_shift_start": false,
+          "first_day_of_week": "Sunday",
+          "maximum_shift_duration": 720,
+          "midnight_offset": 0,
+          "min_minutes_rest_between_shifts": 720,
+          "max_consecutive_working_days": 6,
+          "min_minutes_rest_per_week": 1440,
+          "max_working_days_per_week": 5,
+          "agreement_template_id": 985,
+          "minimum_shift_duration": 0,
+          "max_working_minutes_per_day": 720,
+          "max_working_minutes_per_week": 1680,
+          "min_working_minutes_per_week": 240,
+          "min_consecutive_minutes_rest_per_day": 720,
+          "min_consecutive_resting_days_after_max": 1,
+          "max_minutes_without_break": 210,
+          "max_minutes_break_duration": 60,
+          "min_minutes_break_duration": 15,
+          "schedule_periods": [
+            {
+              "start": 1710046800,
+              "end": 1710648000,
+              "payperiod_minutes_min": 1680,
+              "payperiod_minutes_max": 1680
+            },
+            {
+              "start": 1710648000,
+              "end": 1711252800,
+              "payperiod_minutes_min": 1680,
+              "payperiod_minutes_max": 1680
+            }
+          ],
+          "balance_periods": [],
+          "break_is_work_time": true
+        }
+      ],
+      "skills": [
+        {
+          "id": 1013,
+          "name": "Returns"
+        }
+      ],
+      "raw": {}
+    }
+  ]
+}

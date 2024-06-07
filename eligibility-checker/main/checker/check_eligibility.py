@@ -9,6 +9,8 @@ class EligibilityChecker:
             alfa_client_secret or "",  # TODO - get from config?
         )
 
+        print(run_id, shift_id, user_id, alfa_client_id, alfa_client_secret)
+
         payload = self._get_run_by_id(run_id)
         self.shifts = payload["shifts"]
         self.employees = payload["users"]
@@ -56,7 +58,20 @@ class EligibilityChecker:
 
     def _interpreter_payload(self, result):
         unassigned_shifts = result["unassigned_shifts"]  # always one?
-        eligibility_reasons = unassigned_shifts[0]["ineligibility_reasons"]
+
+        if len(unassigned_shifts) == 0:
+            return [
+                "There are no unassigned shifts."
+            ]
+
+        eligibility_reasons = unassigned_shifts[0].get("ineligibility_reasons", None)
+
+        if eligibility_reasons is None:
+            return [
+                "There are no ineligibility reasons. "
+                "If the shifts is not assigned, it is probably because of one of the rules."
+            ]
+
         print(eligibility_reasons)
         return eligibility_reasons
 

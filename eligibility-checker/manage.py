@@ -4,9 +4,9 @@ import os
 import sys
 
 
-def main():
+def app():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'demo.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'eligibility-checker.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -19,4 +19,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    app()

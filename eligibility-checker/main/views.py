@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .eligibility_checker.check_eligibility import EligibilityChecker
+from .checker.check_eligibility import EligibilityChecker
 import json
 
 
@@ -21,6 +21,8 @@ def eligibility_check(request):
         shift_id = request.POST.get('shift_id')
         user_id = request.POST.get('user_id')
         run_id = request.POST.get('run_id')
+        alfa_client_id = request.POST.get('client_id')
+        alfa_client_secret = request.POST.get('client_secret')
 
         if not shift_id or not user_id or not run_id:
             missing_fields = [
@@ -30,7 +32,7 @@ def eligibility_check(request):
             return render(request, "main/view_result.html", {"reasons": missing_fields})
             # Probably should have different response for missing fields!
 
-        eligibility_checker = EligibilityChecker(run_id, shift_id, user_id)
+        eligibility_checker = EligibilityChecker(run_id, shift_id, user_id, alfa_client_id, alfa_client_secret)
         reasons = eligibility_checker.check_eligibility()
         return render(request, "main/view_result.html", {"reasons": reasons})
     else:

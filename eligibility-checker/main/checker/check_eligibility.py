@@ -5,11 +5,9 @@ from .external.alfa import AlfaClient
 class EligibilityChecker:
     def __init__(self, run_id, shift_id, user_id, alfa_client_id=None, alfa_client_secret=None):
         self.alfa = AlfaClient(
-            alfa_client_id or "",  # TODO - get from config?
-            alfa_client_secret or "",  # TODO - get from config?
+            alfa_client_id,
+            alfa_client_secret
         )
-
-        print(run_id, shift_id, user_id, alfa_client_id, alfa_client_secret)
 
         payload = self._get_run_by_id(run_id)
         self.shifts = payload["shifts"]
@@ -79,4 +77,5 @@ class EligibilityChecker:
 if __name__ == "__main__":
     file = open('payload.json')
     payload = json.load(file)
-    EligibilityChecker(payload, 8563973, 81347).check_eligibility()
+    run_id = "c887d6ce-8c47-4682-b32b-e19f1f4d4f09"
+    EligibilityChecker(run_id, 955678111, 2977987).check_eligibility()

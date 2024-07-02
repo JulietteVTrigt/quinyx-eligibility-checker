@@ -1,17 +1,13 @@
 <html>
-
-<body style="background-color:#baddda;">
-
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-
+	<style type="text/css">
 
         body {
             font-family: 'Poppins';font-size: 16px;
-            margin-left: 40px;
+            margin-left: 200px;
             margin-top: 50px;
         }
         .button {
@@ -42,26 +38,49 @@
             border-radius: 10px;
         }
 
-    </style>
+		.sidenav {
+			height:100%;
+			width:160px;
+			position: fixed;
+			z-index:1;
+			top:0;
+			left:0;
+			background-color:#3691a0;
+			overflow-x: :hidden;
+			padding-top:20px;
+		}
 
+		.sidenav a {
+			padding:6px 8px 6px 16px;
+			text-decoration: none;
+			font-size:25px;
+			color: #111;
+			display:block;
+		}
 
+		.sidenav a:hover{
+			color:#f1f1f1;
+		}
+
+		.main{
+			margin-left:160px;
+			padding: 0px 10px;
+		}
+
+	</style>
+
+	<title>{% block title %}Eligibility Checker{% endblock %}</title>
 </head>
 
-<head>
-    <title> {% block title %} Default Title {% endblock %} </title>
-</head>
+<body style="background-color:#baddda;">
+	<div class="sidenav">
+		<a href="/">Home</a>
+		<a href="/eligibility_check_page">Eligibility</a>
+		<a href="/violation_comparator_page">Rule</a>
+	</div>
 
-{% block sidebar %}
-<a href="{% url 'home' %}" class="button-home">Home</a>
-{% endblock %}
-{% block content %}
-<body>
-<div id="content" name="content">
-    content on base page
-</div>
-{% endblock %}
-
+	{% block content %}
+	{% endblock %}
 
 </body>
-
 </html>

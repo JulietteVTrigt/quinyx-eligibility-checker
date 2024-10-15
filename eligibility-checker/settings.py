@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [".awsapprunner.com"]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://pqtewqpiiy.eu-central-1.awsapprunner.com'
+]
 
 # Application definition
 
